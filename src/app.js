@@ -12,6 +12,7 @@ app.set('view engine', 'hbs');
 app.set('views', viewsPath);
 hbs.registerPartials(partialsPath);
 app.use(express.static(publicDirPath));
+const port = process.env.PORT || 3000;
 
 app.get('', (req, res) => {
   res.render('index', {
@@ -80,6 +81,6 @@ app.get('*', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log('Server started on port 3000');
+app.listen(port, () => {
+  console.log('Server started on port ' + port);
 });

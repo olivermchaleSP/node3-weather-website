@@ -8,8 +8,7 @@ weatherForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const location = search.value;
   console.log(location);
-  const url =
-    'http://localhost:3000/weather?address=' + encodeURIComponent(location);
+  const url = '/weather?address=' + encodeURIComponent(location);
   message1.textContent = 'Loading...';
   message2.textContent = '';
   fetch(url).then((res) => {
